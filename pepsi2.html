@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,800,900&display=swap');
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box; /* Fixed the typo here */
+          font-family: 'Poppins', sans-serif;
+        }
+        
+        section {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          padding: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: #0062be;
+          transition: 0.5s;
+        }
+        
+        header {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 20px 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        header .logo {
+            position: relative;
+            max-width: 80px;
+        }
+        header ul {
+            position: relative;
+            display: flex;
+        }
+        header ul li {
+            list-style: none;
+        }
+        header ul li a {
+            display: inline-block;
+            color: #fff;
+            font-weight: 400;
+            margin-left: 40px;
+            text-decoration: none;
+        }
+        .content {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content .textBox {
+            position: relative;
+            max-width: 600px;
+        }
+        .content .textBox h2 {
+            color: #fff;
+            font-size: 4em;
+            line-height: 1.5em;
+            font-weight:  900;
+            text-transform: uppercase;
+        }
+        .content .textBox h2 span {
+            font-size: 2em; 
+        }
+        .content .textBox p {
+            color: #fff;
+        }
+        .content .textBox a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: #fff;
+            color: #111;
+            border-radius: 40px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .content .imgBox {
+            width: 600px;
+            display: flex;
+            padding-right: 50px;
+            margin-top: 50px;
+            justify-content: flex-end;
+        }
+        .content .imgBox img {
+            max-width: 260px; 
+        }
+        .thumb {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+        .thumb li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .thumb li:hover{
+            transform: translateY(-15px);
+        }
+        .thumb li img {
+            max-width: 40px;
+        }
+        .sci {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .sci li {
+            list-style: none;    
+        }
+        .sci li a {
+            display: inline-block;
+            filter: invert;
+            margin: 5px 0;
+            transform: scale(0.6);
+        }
+        </style>
+    <meta charset="UTF-8">
+    <title>Pepsi Website Landing Page</title>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <section class="sec">
+      <header>
+        <a href="#"><img src="logo.png" class="logo"></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">What's new</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+            <h2>That's What<br><span>I like</span></h2>
+            <p>Discover the perfect balance of sweet and tangy notes, meticulously blended to create a refreshing sensation that's second to none. With its signature cola flavor, Pepsi transcends mere refreshment to become a cherished companion in moments of celebration, relaxation, and everything in between.</p>
+            <a href="#">View All Products</a>
+        </div>
+        <div class="imgBox">
+            <img src="pepsi001.png" class="pepsi">
+        </div>
+      </div>
+      <ul class="thumb">
+        <li><img src="pepsi001.png" onclick="imgSlider('pepsi001.png');changeBgcolor('#0062be')"></li>
+        <li><img src="pepsi002.png" onclick="imgSlider('pepsi002.png');changeBgcolor('#e60c2c')"></li>
+        <li><img src="pepsi003.png" onclick="imgSlider('pepsi003.png');changeBgcolor('#1e1e1e')"></li>
+      </ul>
+      <ul class="sci">
+        <li><a href="#"><img src="facebook.png"></a></li>
+        <li><a href="#"><img src="twitter.png"></a></li>
+        <li><a href="#"><img src="instagram.png"></a></li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.pepsi').src = anything;
+        }
+        function changeBgcolor(color){
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+    </script>
+  </body>
+</html>
